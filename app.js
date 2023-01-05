@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 // connect to mongodb & listen for requests
-const dbURI = process.env.link;
+const dbURI = "mongodb+srv://watson:94RsU2xKfRs2QeFq@cluster0.cfth3qm.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.set('strictQuery', false);
 
