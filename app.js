@@ -17,12 +17,12 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 // connect to mongodb & listen for requests
-const dbURI = "mongodb+srv://watson:94RsU2xKfRs2QeFq@cluster0.cfth3qm.mongodb.net/?retryWrites=true&w=majority";
+const dbURI = process.env.link;
 
 mongoose.set('strictQuery', false);
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'ri' })
-    .then((result) => app.listen(3000))
+    .then((result) => app.listen(process.env.PORT || 3000))
     .catch((err) => console.log(err));
 
 // for POST request
